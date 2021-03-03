@@ -8,9 +8,9 @@
     <depends>com.intellij.modules.platform</depends>
 
     <actions>
-        <action id="net.bjonnh.intellij.filepermissionsplugin.actions.MakeExecutableAction"
-                class="net.bjonnh.intellij.filepermissionsplugin.actions.MakeExecutableAction"
-                text="Make file executable" description="Make the file executable (UNIX-likes only)">
+        <action id="net.bjonnh.intellij.filepermissionsplugin.actions.ChangePermissionsAction"
+                class="net.bjonnh.intellij.filepermissionsplugin.actions.ChangePermissionsAction"
+                text="Change Permissions" description="Change permissions of the file (UNIX-likes only)">
             <add-to-group group-id="FilePropertiesGroup" anchor="last"/>
         </action>
     </actions>
