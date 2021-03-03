@@ -4,6 +4,12 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 
+<!-- Plugin description -->
+**File Permissions Plugin** is a repository that provides a simple plugin to change file permissions directly from IntelliJ.
+
+It is currently only able to make a file executable.
+<!-- Plugin description end -->
+
 ## Not published yet!
 
 The plugin is not published yet, it is just a toy example.

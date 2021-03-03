@@ -9,7 +9,6 @@ import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.attribute.PosixFilePermission
 
-
 class MakeExecutableAction : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
         val currentProject: Project = event.project ?: return
