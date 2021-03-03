@@ -1,7 +1,7 @@
-package com.github.bjonnh.filepermissionsplugin.services
+package net.bjonnh.intellij.filepermissionsplugin.template.services
 
-import com.github.bjonnh.filepermissionsplugin.MyBundle
 import com.intellij.openapi.project.Project
+import net.bjonnh.intellij.filepermissionsplugin.template.MyBundle
 
 class MyProjectService(project: Project) {
 

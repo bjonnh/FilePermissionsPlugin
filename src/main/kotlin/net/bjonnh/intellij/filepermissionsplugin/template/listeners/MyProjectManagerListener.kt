@@ -1,9 +1,9 @@
-package com.github.bjonnh.filepermissionsplugin.listeners
+package net.bjonnh.intellij.filepermissionsplugin.template.listeners
 
-import com.github.bjonnh.filepermissionsplugin.services.MyProjectService
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener
+import net.bjonnh.intellij.filepermissionsplugin.template.services.MyProjectService
 
 internal class MyProjectManagerListener : ProjectManagerListener {
 

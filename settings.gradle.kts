@@ -1,1 +1,1 @@
-rootProject.name = "FilePermissionsPlugin"
+rootProject.name = "File Permissions Plugin"

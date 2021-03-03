@@ -1,19 +1,27 @@
 <idea-plugin>
-    <id>com.github.bjonnh.filepermissionsplugin</id>
+    <id>net.bjonnh.intellij.filepermissionsplugin</id>
     <name>FilePermissionsPlugin</name>
-    <vendor>bjonnh</vendor>
+    <vendor>Bjonnh.net</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.bjonnh.filepermissionsplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.bjonnh.filepermissionsplugin.services.MyProjectService"/>
+        <applicationService serviceImplementation="net.bjonnh.intellij.filepermissionsplugin.template.services.MyApplicationService"/>
+        <projectService serviceImplementation="net.bjonnh.intellij.filepermissionsplugin.template.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.bjonnh.filepermissionsplugin.listeners.MyProjectManagerListener"
+        <listener class="net.bjonnh.intellij.filepermissionsplugin.template.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+
+        <action id="net.bjonnh.intellij.filepermissionsplugin.template.actions.MakeExecutableAction"
+                class="net.bjonnh.intellij.filepermissionsplugin.template.actions.MakeExecutableAction"
+                text="Make file executable" description="Make the file executable (UNIX-likes only)">
+            <add-to-group group-id="FilePropertiesGroup" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
