@@ -1,4 +1,4 @@
-package net.bjonnh.intellij.filepermissionsplugin.template
+package net.bjonnh.intellij.filepermissionsplugin
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls

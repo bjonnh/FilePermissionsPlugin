@@ -1,4 +1,4 @@
-package net.bjonnh.intellij.filepermissionsplugin.template.services
+package net.bjonnh.intellij.filepermissionsplugin.services
 
 import com.intellij.openapi.project.Project
 import net.bjonnh.intellij.filepermissionsplugin.template.MyBundle

@@ -1,4 +1,4 @@
-package net.bjonnh.intellij.filepermissionsplugin.template.actions
+package net.bjonnh.intellij.filepermissionsplugin.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
