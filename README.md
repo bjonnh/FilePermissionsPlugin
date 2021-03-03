@@ -10,6 +10,8 @@
 <!-- Plugin description -->
 **File Permissions Plugin** is a repository that provides a simple plugin to change file permissions directly from IntelliJ.
 
+It adds two actions, one to "Change Permissions" to change the permissions by showing a dialog, the other one "Make File Executable" by making the file executable by its owner (that's probably the one you want).
+
 <!-- Plugin description end -->
 
 ## Not published yet!
