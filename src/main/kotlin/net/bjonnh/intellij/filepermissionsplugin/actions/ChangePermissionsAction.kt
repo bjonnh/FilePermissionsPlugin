@@ -4,6 +4,7 @@ import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.ui.DialogPanel
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.Messages
 import com.intellij.ui.layout.PropertyBinding
@@ -22,18 +23,17 @@ class PermissionManager(initialPermissions: Set<PosixFilePermission>) {
     val permissions: Set<PosixFilePermission>
         get() = _permissions.toSet()
 
-    val u_r = permissionBuilder(PosixFilePermission.OWNER_READ)
-    val u_w = permissionBuilder(PosixFilePermission.OWNER_WRITE)
-    val u_x = permissionBuilder(PosixFilePermission.OWNER_EXECUTE)
+    val userRead = permissionBuilder(PosixFilePermission.OWNER_READ)
+    val userWrite = permissionBuilder(PosixFilePermission.OWNER_WRITE)
+    val userExecute = permissionBuilder(PosixFilePermission.OWNER_EXECUTE)
 
-    val g_r = permissionBuilder(PosixFilePermission.GROUP_READ)
-    val g_w = permissionBuilder(PosixFilePermission.GROUP_WRITE)
-    val g_x = permissionBuilder(PosixFilePermission.GROUP_EXECUTE)
+    val groupRead = permissionBuilder(PosixFilePermission.GROUP_READ)
+    val groupWrite = permissionBuilder(PosixFilePermission.GROUP_WRITE)
+    val groupExecute = permissionBuilder(PosixFilePermission.GROUP_EXECUTE)
 
-    val o_r = permissionBuilder(PosixFilePermission.OTHERS_READ)
-    val o_w = permissionBuilder(PosixFilePermission.OTHERS_WRITE)
-    val o_x = permissionBuilder(PosixFilePermission.OTHERS_EXECUTE)
-
+    val othersRead = permissionBuilder(PosixFilePermission.OTHERS_READ)
+    val othersWrite = permissionBuilder(PosixFilePermission.OTHERS_WRITE)
+    val othersExecute = permissionBuilder(PosixFilePermission.OTHERS_EXECUTE)
 
     fun permissionBuilder(permission: PosixFilePermission): PropertyBinding<Boolean> =
         PropertyBinding<Boolean>(
@@ -41,46 +41,56 @@ class PermissionManager(initialPermissions: Set<PosixFilePermission>) {
             { value ->
                 if (value) _permissions.add(permission)
                 else _permissions.remove(permission)
-                println("Hello la: $permission")
             }
         )
 }
 
+/**
+ * Create a dialog for the action
+ *
+ * @param fileName name of the file (only used for the title of the window)
+ * @param initialPermissions set of initial permissions
+ * @param okFunction function that is executed when the user clicks OK, take the new permissions as a parameter
+ */
 class Dialog(
     fileName: String,
-    permissions: Set<PosixFilePermission>,
+    initialPermissions: Set<PosixFilePermission>,
     val okFunction: (Set<PosixFilePermission>) -> Unit
 ) :
     DialogWrapper(null) {
-    private val permissionManager = PermissionManager(permissions)
+    private val permissionManager = PermissionManager(initialPermissions)
 
     init {
         init()
-        title = "Change permissions of $fileName"
-        println("Hello ici")
+        title = "Permissions of $fileName"
     }
 
-    override fun createCenterPanel() = panel {
+    /**
+     * Create the dialog for the action
+     */
+    override fun createCenterPanel(): DialogPanel = panel {
         row("User") {
-            checkBox("Read", permissionManager.u_r)
-            checkBox("Write", permissionManager.u_w)
-            checkBox("eXecute", permissionManager.u_x)
+            checkBox("Read", permissionManager.userRead)
+            checkBox("Write", permissionManager.userWrite)
+            checkBox("eXecute", permissionManager.userExecute)
         }
         row("Group") {
-            checkBox("Read", permissionManager.g_r)
-            checkBox("Write", permissionManager.g_w)
-            checkBox("eXecute", permissionManager.g_x)
+            checkBox("Read", permissionManager.groupRead)
+            checkBox("Write", permissionManager.groupWrite)
+            checkBox("eXecute", permissionManager.groupExecute)
         }
         row("Others") {
-            checkBox("Read", permissionManager.o_r)
-            checkBox("Write", permissionManager.o_w)
-            checkBox("eXecute", permissionManager.o_x)
+            checkBox("Read", permissionManager.othersRead)
+            checkBox("Write", permissionManager.othersWrite)
+            checkBox("eXecute", permissionManager.othersExecute)
         }
     }
 
+    /**
+     * Call okFunction with the current permissions from the dialog
+     */
     override fun doOKAction() {
         super.doOKAction()
-        println(permissionManager.permissions)
         okFunction(permissionManager.permissions)
     }
 }
@@ -90,8 +100,14 @@ class Dialog(
  */
 private fun Row.checkBox(s: String, property: PropertyBinding<Boolean>) = checkBox(s, property.get, property.set)
 
-
+/**
+ * An action that allows a user to change the permissions of the currently selected file
+ */
 class ChangePermissionsAction : AnAction() {
+
+    /**
+     * Internal function called by IntelliJ when the users run this action
+     */
     override fun actionPerformed(e: AnActionEvent) {
         val currentProject: Project = e.project ?: return
 
@@ -107,7 +123,6 @@ class ChangePermissionsAction : AnAction() {
                     Files.setPosixFilePermissions(path, newPermissions)
                 }
                 dialog.show()
-                //permissions.add(PosixFilePermission.OWNER_EXECUTE)
             } catch (ex: IOException) {
                 Messages.showMessageDialog(
                     currentProject,
