@@ -2,7 +2,7 @@
 
 # FilePermissionsPlugin Changelog
 
-## 0.1
+## [0.1.0]
 ### Added
 - Support for changing all permissions
 - Support for making a file executable
