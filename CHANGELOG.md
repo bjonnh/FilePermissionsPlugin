@@ -3,9 +3,9 @@
 # FilePermissionsPlugin Changelog
 
 ## [Unreleased]
-## [0.1.2]
-### Added
-nothing yet
+### Changes
+- Cleaner documentation and especially a much better description for the project
+- Probably understood how the automated change log works.
 
 ## [0.1.2]
 ### Added
@@ -23,3 +23,4 @@ nothing yet
 ## [0.0.1]
 ### Added
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
