@@ -3,6 +3,7 @@
 # FilePermissionsPlugin Changelog
 
 ## [Unreleased]
+## [0.1.3]
 ### Changes
 - Cleaner documentation and especially a much better description for the project
 - Probably understood how the automated change log works.
