@@ -1,3 +1,9 @@
+/**
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ *
+ * Copyright (c) 2021 Jonathan Bisson
+ */
+
 package net.bjonnh.intellij.filepermissionsplugin.dialogs
 
 import com.intellij.openapi.ui.DialogPanel
