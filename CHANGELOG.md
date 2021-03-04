@@ -6,6 +6,10 @@
 ### Added
 nothing yet
 
+## [0.1.2]
+### Added
+- Licensed under GPLv3
+
 ## [0.1.1]
 ### Added
 - Just to test the release process for next time
