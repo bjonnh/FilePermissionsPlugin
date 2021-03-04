@@ -2,11 +2,19 @@
 
 # FilePermissionsPlugin Changelog
 
+## [Unreleased]
+### Added
+nothing yet
+
+## [0.1.1]
+### Added
+- Just to test the release process for next time
+
 ## [0.1.0]
 ### Added
 - Support for changing all permissions
 - Support for making a file executable
 
-## [Unreleased]
+## [0.0.1]
 ### Added
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
