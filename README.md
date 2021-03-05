@@ -15,10 +15,12 @@ It adds two actions:
 These actions are accessible from the IntelliJ Actions: using shift-shift or control-shift-A (⇧⌘A on MacOS)
 
 They are also accessible in the File menu and inside File Properties:
-![A screenshot of the file menu showing the two actions](images/filepermission.png)
+
+![A screenshot of the file menu showing the two actions](https://raw.githubusercontent.com/bjonnh/FilePermissionsPlugin/main/images/filepermission.png)
 
 If you choose **Change Permissions** you will see the following dialog:
-![Screenshot of the dialog when changing permissions](images/screenshot.png)
+
+![Screenshot of the dialog when changing permissions](https://raw.githubusercontent.com/bjonnh/FilePermissionsPlugin/main/images/screenshot.png)
 <!-- Plugin description end -->
 
 ## Installation
