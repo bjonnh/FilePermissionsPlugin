@@ -8,19 +8,20 @@
 ![Screenshot](images/screenshot.png)
 
 <!-- Plugin description -->
-**File Permissions Plugin** is a simple plugin to change file permissions directly from IntelliJ.
+**File Permissions Plugin** allows the change of file permissions directly from IntelliJ.
 
 It adds two actions:
 
-- **Change Permissions** to change the permissions by showing you a dialog 
-- **Make File Executable** to make the file executable by its owner
+- **Change Permissions** to change the permissions by showing you a dialog. 
+- **Make File Executable** to make the file executable by its owner.
+
+These actions are accessible from the IntelliJ Actions: using shift-shift or control-shift-A (⇧⌘A on MacOS)
+
+They are also accessible in the File menu and inside File Properties:
+
+![A screenshot of the file menu showing the two actions](images/filepermission.png)
 
 <!-- Plugin description end -->
-
-## Not published yet!
-
-The plugin is not published yet, waiting for Jetbrains moderation. But you can build it yourself or use 
-the released version from github.
 
 ## Installation
 
@@ -40,3 +41,6 @@ Plugin based on the [IntelliJ Platform Plugin Template][template].
 
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
 
+## Authors and participants
+
+- Thanks to Natalia Melnikova (JB) for the menu screenshot and the proposition to add it
