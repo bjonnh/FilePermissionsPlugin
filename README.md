@@ -4,9 +4,6 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/16238-filepermissionsplugin)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/16238-filepermissionsplugin)
 
-
-![Screenshot](images/screenshot.png)
-
 <!-- Plugin description -->
 **File Permissions Plugin** allows the change of file permissions directly from IntelliJ.
 
@@ -18,9 +15,10 @@ It adds two actions:
 These actions are accessible from the IntelliJ Actions: using shift-shift or control-shift-A (⇧⌘A on MacOS)
 
 They are also accessible in the File menu and inside File Properties:
-
 ![A screenshot of the file menu showing the two actions](images/filepermission.png)
 
+If you choose **Change Permissions** you will see the following dialog:
+![Screenshot of the dialog when changing permissions](images/screenshot.png)
 <!-- Plugin description end -->
 
 ## Installation
