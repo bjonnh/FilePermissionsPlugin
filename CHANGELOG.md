@@ -3,6 +3,7 @@
 # FilePermissionsPlugin Changelog
 
 ## [Unreleased]
+## [0.1.7]
 ## [0.1.6]
 ### Changes
 - A better description to explain where to find the actions.
