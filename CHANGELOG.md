@@ -3,6 +3,7 @@
 # FilePermissionsPlugin Changelog
 
 ## [Unreleased]
+## [0.1.8]
 ### Changes
 - Reduced the size of the screenshot
 
