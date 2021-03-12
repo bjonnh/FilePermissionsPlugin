@@ -34,7 +34,7 @@ class MakeExecutableAction : AnAction() {
             } catch (ex: IOException) {
                 Messages.showMessageDialog(
                     currentProject,
-                    "${path.fileName} is not accessible.",
+                    "${path.fileName} is not accessible.\n${ex.localizedMessage}",
                     "File Access Error",
                     Messages.getInformationIcon()
                 )
@@ -46,6 +46,7 @@ class MakeExecutableAction : AnAction() {
      * This action will only be visible in a project and if a file is selected
      * and it will only be enabled if the file is not executable already
      */
+    @Suppress("SwallowedException") // On purpose, if we fail we fail silently and don't display the options
     override fun update(e: AnActionEvent) {
         val project = e.project
         val path = e.getData(CommonDataKeys.VIRTUAL_FILE)?.canonicalFile?.toNioPath()

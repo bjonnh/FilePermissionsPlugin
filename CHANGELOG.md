@@ -5,7 +5,7 @@
 ## [Unreleased]
 ### Changes
 - Validate for IntelliJ Idea Beta (211.x)
-
+- Bump some versions of development dependencies
 
 ## [0.1.8]
 ### Changes

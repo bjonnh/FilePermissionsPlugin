@@ -33,7 +33,7 @@ class ChangePermissionsAction : AnAction() {
             } catch (ex: IOException) {
                 Messages.showMessageDialog(
                     currentProject,
-                    "${path.fileName} is not accessible.",
+                    "${path.fileName} is not accessible.\n${ex.localizedMessage}",
                     "File Access Error",
                     Messages.getInformationIcon()
                 )
