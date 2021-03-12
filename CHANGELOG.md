@@ -1,11 +1,12 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# FilePermissionsPlugin Changelog
+# File Permissions Plugin Changelog
 
 ## [Unreleased]
 ### Changes
 - Validate for IntelliJ Idea Beta (211.x)
 - Bump some versions of development dependencies
+- Rename the plugin to remove plugin from the name (follow verifier rules)
 
 ## [0.1.8]
 ### Changes

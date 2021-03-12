@@ -1,11 +1,11 @@
-# FilePermissionsPlugin
+# IntelliJ File Permissions Plugin
 
 ![Build](https://github.com/bjonnh/FilePermissionsPlugin/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/16238.svg)](https://plugins.jetbrains.com/plugin/16238-filepermissionsplugin)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/16238.svg)](https://plugins.jetbrains.com/plugin/16238-filepermissionsplugin)
 
 <!-- Plugin description -->
-**File Permissions Plugin** allows the change of file permissions directly from IntelliJ.
+The **File Permissions** plugin allows the change of file permissions directly from IntelliJ.
 
 It adds two actions:
 
