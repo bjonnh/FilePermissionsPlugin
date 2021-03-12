@@ -3,6 +3,10 @@
 # FilePermissionsPlugin Changelog
 
 ## [Unreleased]
+### Changes
+- Validate for IntelliJ Idea Beta (211.x)
+
+
 ## [0.1.8]
 ### Changes
 - Reduced the size of the screenshot
