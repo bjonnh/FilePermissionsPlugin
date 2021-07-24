@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 ## [0.2.0]
+## [0.2.0]
 ### Changes
 - Validate for IntelliJ Idea Beta (212.x)
 - Bump some versions of development dependencies
