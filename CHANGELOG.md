@@ -3,8 +3,9 @@
 # File Permissions Plugin Changelog
 
 ## [Unreleased]
+## [0.2.0]
 ### Changes
-- Validate for IntelliJ Idea Beta (211.x)
+- Validate for IntelliJ Idea Beta (212.x)
 - Bump some versions of development dependencies
 - Rename the plugin to remove plugin from the name (follow verifier rules)
 
