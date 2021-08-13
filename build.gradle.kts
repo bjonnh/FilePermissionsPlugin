@@ -23,7 +23,7 @@ repositories {
     maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
 }
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.18.0")
 }
 
 // Configure gradle-intellij-plugin plugin.
