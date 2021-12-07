@@ -6,11 +6,11 @@ fun properties(key: String) = project.findProperty(key).toString()
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.5.21"
-    id("org.jetbrains.intellij") version "1.1.4"
-    id("org.jetbrains.changelog") version "1.2.1"
-    id("io.gitlab.arturbosch.detekt") version "1.16.0"
-    id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
+    id("org.jetbrains.kotlin.jvm") version "1.6.0"
+    id("org.jetbrains.intellij") version "1.3.0"
+    id("org.jetbrains.changelog") version "1.3.1"
+    id("io.gitlab.arturbosch.detekt") version "1.19.0"
+    id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
     id("com.github.ben-manes.versions") version "0.39.0"
 }
 
@@ -23,7 +23,7 @@ repositories {
     maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
 }
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0")
 }
 
 // Configure gradle-intellij-plugin plugin.
