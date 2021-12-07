@@ -3,7 +3,9 @@
 # File Permissions Plugin Changelog
 
 ## [Unreleased]
-## [0.2.0]
+### Changes
+- Update versions of packages
+- Verify for latest versions of IntelliJ platform
 ## [0.2.0]
 ### Changes
 - Validate for IntelliJ Idea Beta (212.x)
