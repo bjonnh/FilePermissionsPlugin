@@ -4,8 +4,10 @@
 
 ## [Unreleased]
 ### Changes
+- Support for 2022.1
 - Update versions of packages
-- Verify for latest versions of IntelliJ platform
+- Integrate latest platform plugin template
+- Verify for latest version of IntelliJ platform
 ## [0.2.0]
 ### Changes
 - Validate for IntelliJ Idea Beta (212.x)
