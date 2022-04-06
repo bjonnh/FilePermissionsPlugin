@@ -3,11 +3,18 @@
 # File Permissions Plugin Changelog
 
 ## [Unreleased]
+
+## [0.2.3]
+### Changes
+- Fix error seen from time to time when the file path couldn't be converted with toNioPath
+
+## [0.2.2]
 ### Changes
 - Support for 2022.1
 - Update versions of packages
 - Integrate latest platform plugin template
 - Verify for latest version of IntelliJ platform
+
 ## [0.2.0]
 ### Changes
 - Validate for IntelliJ Idea Beta (212.x)
@@ -19,6 +26,7 @@
 - Reduced the size of the screenshot
 
 ## [0.1.7]
+
 ## [0.1.6]
 ### Changes
 - A better description to explain where to find the actions.
@@ -48,4 +56,3 @@
 ## [0.0.1]
 ### Added
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
-

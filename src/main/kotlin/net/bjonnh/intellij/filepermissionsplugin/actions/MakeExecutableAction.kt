@@ -13,6 +13,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import java.io.IOException
 import java.nio.file.Files
+import java.nio.file.Path
 import java.nio.file.attribute.PosixFilePermission
 
 /**
@@ -49,16 +50,20 @@ class MakeExecutableAction : AnAction() {
     @Suppress("SwallowedException") // On purpose, if we fail we fail silently and don't display the options
     override fun update(e: AnActionEvent) {
         val project = e.project
-        val path = e.getData(CommonDataKeys.VIRTUAL_FILE)?.canonicalFile?.toNioPath()
-        e.presentation.isEnabled = try {
-            if (path == null) {
-                false
-            } else {
-                PosixFilePermission.OWNER_EXECUTE !in Files.getPosixFilePermissions(path)
-            }
-        } catch (ex: IOException) {
-            false
+        try {
+            val path = e.getData(CommonDataKeys.VIRTUAL_FILE)?.canonicalFile?.toNioPath()
+            e.presentation.isEnabled = path?.let { isFileExecutable(it) } ?: false
+            e.presentation.isVisible = (project != null) && (path != null)
+        } catch (_: UnsupportedOperationException) { // Sometimes we see that from toNioPath
+            e.presentation.isEnabled = false
+            e.presentation.isVisible = false
         }
-        e.presentation.isVisible = (project != null) && (path != null)
+    }
+
+    @Suppress("SwallowedException") // On purpose, if we fail we fail silently and don't display the options
+    private fun isFileExecutable(path: Path?) = try {
+        PosixFilePermission.OWNER_EXECUTE !in Files.getPosixFilePermissions(path)
+    } catch (ex: IOException) {
+        false
     }
 }
