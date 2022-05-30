@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+## [0.2.4]
+### Changes
+- Support for 2022.2
+
 ## [0.2.3]
 ### Changes
 - Fix error seen from time to time when the file path couldn't be converted with toNioPath

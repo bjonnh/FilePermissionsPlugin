@@ -9,11 +9,11 @@ fun properties(key: String) = project.findProperty(key).toString()
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.6.20-RC"
-    id("org.jetbrains.intellij") version "1.4.0"
+    id("org.jetbrains.kotlin.jvm") version "1.7.0-RC"
+    id("org.jetbrains.intellij") version "1.6.0"
     id("org.jetbrains.changelog") version "1.3.1"
-    id("io.gitlab.arturbosch.detekt") version "1.20.0-RC1"
-    id("org.jlleitschuh.gradle.ktlint") version "10.2.1"
+    id("io.gitlab.arturbosch.detekt") version "1.20.0"
+    id("org.jlleitschuh.gradle.ktlint") version "10.3.0"
     id("org.jetbrains.qodana") version "0.1.13"
     id("com.github.ben-manes.versions") version "0.42.0"
 }
@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.20.0-RC1")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.20.0")
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
