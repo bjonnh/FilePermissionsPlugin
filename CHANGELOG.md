@@ -5,6 +5,9 @@
 ## [Unreleased]
 
 ## [0.2.4]
+Make it work with 2022.2 and update some packages.
+
+## [0.2.4]
 ### Changes
 - Support for 2022.2
 
