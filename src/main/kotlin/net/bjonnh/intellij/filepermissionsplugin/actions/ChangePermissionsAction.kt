@@ -46,7 +46,11 @@ class ChangePermissionsAction : AnAction() {
      */
     override fun update(e: AnActionEvent) {
         val project = e.project
-        val path = e.getData(CommonDataKeys.VIRTUAL_FILE)?.canonicalFile?.toNioPath()
-        e.presentation.isEnabledAndVisible = (project != null) && (path != null)
+        try {
+            val path = e.getData(CommonDataKeys.VIRTUAL_FILE)?.canonicalFile?.toNioPath()
+            e.presentation.isEnabledAndVisible = (project != null) && (path != null)
+        } catch (_: UnsupportedOperationException) { // Sometimes we see that from toNioPath
+            e.presentation.isEnabledAndVisible = false
+        }
     }
 }
