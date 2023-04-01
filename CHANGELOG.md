@@ -3,6 +3,7 @@
 # File Permissions Plugin Changelog
 
 ## Unreleased
+- Support for 2023.1
 
 ## 0.2.5 - 2022-11-29
 - Support for 2022.3
