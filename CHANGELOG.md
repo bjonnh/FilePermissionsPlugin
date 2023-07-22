@@ -4,6 +4,9 @@
 
 ## Unreleased
 
+## 0.2.7 - 2023-07-22
+Support for 2023.3 editors
+
 ## 0.2.6 - 2023-04-10
 - Support for 2023.1
 
