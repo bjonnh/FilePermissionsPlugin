@@ -6,7 +6,7 @@
 
 package net.bjonnh.intellij.filepermissionsplugin.models
 
-import com.intellij.ui.layout.PropertyBinding
+import com.intellij.ui.dsl.builder.MutableProperty
 import java.nio.file.attribute.PosixFilePermission
 
 /**
@@ -21,25 +21,25 @@ class PermissionManager(initialPermissions: Set<PosixFilePermission>) {
     val permissions: Set<PosixFilePermission>
         get() = _permissions.toSet()
 
-    val userRead: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.OWNER_READ)
-    val userWrite: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.OWNER_WRITE)
-    val userExecute: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.OWNER_EXECUTE)
+    val userRead: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.OWNER_READ)
+    val userWrite: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.OWNER_WRITE)
+    val userExecute: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.OWNER_EXECUTE)
 
-    val groupRead: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.GROUP_READ)
-    val groupWrite: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.GROUP_WRITE)
-    val groupExecute: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.GROUP_EXECUTE)
+    val groupRead: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.GROUP_READ)
+    val groupWrite: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.GROUP_WRITE)
+    val groupExecute: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.GROUP_EXECUTE)
 
-    val othersRead: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.OTHERS_READ)
-    val othersWrite: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.OTHERS_WRITE)
-    val othersExecute: PropertyBinding<Boolean> = permissionBuilder(PosixFilePermission.OTHERS_EXECUTE)
+    val othersRead: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.OTHERS_READ)
+    val othersWrite: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.OTHERS_WRITE)
+    val othersExecute: MutableProperty<Boolean> = permissionBuilder(PosixFilePermission.OTHERS_EXECUTE)
 
     /**
      * Helper function to create a dynamic set of permissions
      *
      * @param permission The permission that can be made present or not (using set) and read from permissions (with get)
      */
-    private fun permissionBuilder(permission: PosixFilePermission): PropertyBinding<Boolean> =
-        PropertyBinding(
+    private fun permissionBuilder(permission: PosixFilePermission): MutableProperty<Boolean> =
+        MutableProperty(
             { permission in _permissions },
             { value ->
                 if (value) _permissions.add(permission)

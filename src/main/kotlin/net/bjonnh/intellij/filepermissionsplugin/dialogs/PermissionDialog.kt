@@ -8,9 +8,8 @@ package net.bjonnh.intellij.filepermissionsplugin.dialogs
 
 import com.intellij.openapi.ui.DialogPanel
 import com.intellij.openapi.ui.DialogWrapper
-import com.intellij.ui.layout.PropertyBinding
-import com.intellij.ui.layout.Row
-import com.intellij.ui.layout.panel
+import com.intellij.ui.dsl.builder.bindSelected
+import com.intellij.ui.dsl.builder.panel
 import net.bjonnh.intellij.filepermissionsplugin.models.PermissionManager
 import java.nio.file.attribute.PosixFilePermission
 
@@ -21,6 +20,7 @@ import java.nio.file.attribute.PosixFilePermission
  * @param initialPermissions set of initial permissions
  * @param okFunction function that is executed when the user clicks OK, take the new permissions as a parameter
  */
+@Suppress("DialogTitleCapitalization")
 class PermissionDialog(
     fileName: String,
     initialPermissions: Set<PosixFilePermission>,
@@ -39,19 +39,19 @@ class PermissionDialog(
      */
     override fun createCenterPanel(): DialogPanel = panel {
         row("User") {
-            checkBox("Read", permissionManager.userRead)
-            checkBox("Write", permissionManager.userWrite)
-            checkBox("eXecute", permissionManager.userExecute)
+            checkBox("Read").bindSelected(permissionManager.userRead)
+            checkBox("Write").bindSelected(permissionManager.userWrite)
+            checkBox("eXecute").bindSelected(permissionManager.userExecute)
         }
         row("Group") {
-            checkBox("Read", permissionManager.groupRead)
-            checkBox("Write", permissionManager.groupWrite)
-            checkBox("eXecute", permissionManager.groupExecute)
+            checkBox("Read").bindSelected(permissionManager.groupRead)
+            checkBox("Write").bindSelected(permissionManager.groupWrite)
+            checkBox("eXecute").bindSelected(permissionManager.groupExecute)
         }
         row("Others") {
-            checkBox("Read", permissionManager.othersRead)
-            checkBox("Write", permissionManager.othersWrite)
-            checkBox("eXecute", permissionManager.othersExecute)
+            checkBox("Read").bindSelected(permissionManager.othersRead)
+            checkBox("Write").bindSelected(permissionManager.othersWrite)
+            checkBox("eXecute").bindSelected(permissionManager.othersExecute)
         }
     }
 
@@ -63,8 +63,3 @@ class PermissionDialog(
         okFunction(permissionManager.permissions)
     }
 }
-
-/**
- * Create a checkbox working directly on a PropertyBinding
- */
-private fun Row.checkBox(s: String, property: PropertyBinding<Boolean>) = checkBox(s, property.get, property.set)
