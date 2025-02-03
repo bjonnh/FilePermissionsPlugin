@@ -1,4 +1,4 @@
-<idea-plugin>
+<idea-plugin require-restart="false">
     <id>net.bjonnh.intellij.filepermissionsplugin</id>
     <name>File Permissions</name>
     <vendor>bjonnh.net</vendor>
