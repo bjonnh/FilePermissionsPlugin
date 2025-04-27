@@ -108,7 +108,8 @@
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
 [Unreleased]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.3.2...HEAD
-[0.3.2]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.8...v0.3.2
+[0.3.2]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.8...v0.3.1
 [0.2.8]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.6...v0.2.8
 [0.2.6]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.4...v0.2.5
