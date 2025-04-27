@@ -6,6 +6,7 @@
 
 package net.bjonnh.intellij.filepermissionsplugin.actions
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -66,4 +67,10 @@ class MakeExecutableAction : AnAction() {
     } catch (ex: IOException) {
         false
     }
+
+    /**
+     * Specifies that this action update will be executed on the background
+     * thread.
+     */
+    override fun getActionUpdateThread() = ActionUpdateThread.BGT
 }
