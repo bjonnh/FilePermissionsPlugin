@@ -4,6 +4,8 @@
 
 ## Unreleased
 
+- Support for 2025.1 (thanks SubOptimal)
+
 ## 0.2.8 - 2023-12-31
 
 - Support for 2023.3
