@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+- Remove the `until-build` upper bound so the plugin stays compatible with future IDEs (262 and beyond)
+- Update build tooling for modern JDKs: Gradle 9.6.1, IntelliJ Platform Gradle Plugin 2.17.0, foojay resolver 1.0.0
+
 ## [0.3.2] - 2025-04-27
 
 - Support for 2025.1, fix menus (thanks [SubOptimal](https://github.com/SubOptimal))
