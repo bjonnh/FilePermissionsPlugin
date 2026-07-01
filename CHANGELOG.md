@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.3.3] - 2026-07-01
+
 - Remove the `until-build` upper bound so the plugin stays compatible with future IDEs (262 and beyond)
 - Update build tooling for modern JDKs: Gradle 9.6.1, IntelliJ Platform Gradle Plugin 2.17.0, foojay resolver 1.0.0
 
@@ -110,8 +112,10 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[Unreleased]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.3.2...HEAD
-[0.3.2]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.8...v0.3.2
+[Unreleased]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.3.3...HEAD
+[0.3.3]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.3.2...v0.3.3
+[0.3.2]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.8...v0.3.1
 [0.2.8]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.6...v0.2.8
 [0.2.6]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/bjonnh/FilePermissionsPlugin/compare/v0.2.4...v0.2.5
